@@ -9,28 +9,47 @@ function userdata.basefootnote(buf, page, uniquename)
     -- 解析位置参数
     local buf_option = utilities.parsers.settings_to_array(buf)[1]
     local page_option = utilities.parsers.settings_to_array(page)[1]
-    local uniquename_option = utilities.parsers.settings_to_array(uniquename)[1]
     -- 解析命名参数
     -- local named_values = utilities.parsers.settings_to_hash(keyvals)
 
-    context("\\footnote[%s]{\\getbuffer[%s]:%s.}",uniquename_option,buf_option,page_option)
+    local getdata = job.datasets.getdata
+    local setdata = job.datasets.setdata
+    -- 找到自己的真实页码
+    local current_realpage
+    local current_order
+    local i = 1
+    while getdata("footnotetable", i) do
+        if (uniquename == getdata("footnotetable", i, "uniquename"))
+            and getdata("footnotetable", i, "realpage") then
+                current_realpage = getdata("footnotetable", i, "realpage")
+                current_order = getdata("footnotetable", i, "order")
+                -- 找到本页第一个同源注释
+                local n = 1
+                while getdata("footnotetable", n) do
+                    if (buf == getdata("footnotetable", n, "buf"))
+                        and current_realpage == getdata("footnotetable", n, "realpage")
+                        and current_order > getdata("footnotetable", n, "order") then
+                            local firstre = getdata("footnotetable", n, "uniquename")
+                            -- context("\\setdataset[footnotetable][buf={%s},page={%s},uniquename={%s},firstre={%s}]",buf_option,page_option,uniquename,firstre)
+                            context("\\footnote{同[\\in{}{}[%s]]%s.}",firstre,page_option)
+                        break
+                    end
+                    n = n + 1
+                end
+            break
+        else
+            -- context("\\setdataset[footnotetable][buf={%s},page={%s},uniquename={%s}]",buf_option,page_option,uniquename)
+            context("\\footnote[%s]{\\getbuffer[%s]\\unskip:%s.}",uniquename,buf_option,page_option)
+        end
+        i = i + 1
+    end
+
 
 end
+
+
 
 --[[
-local getdata = job.datasets.getdata
-
-local me_rp
-local d = 1
-while getdata("footnotetable", d) do
-    if (un == getdata("footnotetable", d, "un")) then
-        me_rp = getdata("footnotetable", d, "realpage")
-        break
-    end
-    d = d + 1
-end
-
-
 local first_un
 local d = 1
 while getdata("footnotetable", d) do

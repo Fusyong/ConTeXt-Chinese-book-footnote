@@ -67,7 +67,7 @@ utilitydata.job.datasets.collected={
    ["buf"]="abcd",
    ["index"]=2,
    ["order"]=2,
-   ["page"]="338",
+   ["page"]="333",
    ["realpage"]=1,
    ["uniquename"]="uniquenameC",
   },
@@ -173,12 +173,12 @@ utilitydata.structures.lists.collected={
    ["internal"]=1,
    ["order"]=1,
    ["realpage"]=1,
-   ["reference"]="uniquenameB",
+   ["reference"]="uniquenameC",
    ["section"]=0,
    ["used"]="fit",
   },
   ["titledata"]={
-   ["title"]="\\getbuffer [abcd]:337.",
+   ["title"]="\\getbuffer [abcd]\\unskip :333.",
   },
  },
  {
@@ -189,12 +189,11 @@ utilitydata.structures.lists.collected={
    ["internal"]=3,
    ["order"]=2,
    ["realpage"]=1,
-   ["reference"]="uniquenameC",
    ["section"]=0,
    ["used"]="fit",
   },
   ["titledata"]={
-   ["title"]="\\getbuffer [abcd]:338.",
+   ["title"]="同[\\in {}{}[uniquenameB]]333.",
   },
  },
 }
