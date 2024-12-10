@@ -1,0 +1,34 @@
+%%%搜索文件的路径
+\usepath[./envs/]
+\usepath[./img/]
+\setupexternalfigures[location={local,default}]
+%%%%配置和宏环境
+\environment[env_setting.tex]
+
+
+\starttext
+This is an example of a paragraph with a non-regular shape.
+This is an example of a paragraph with a non-regular shape.
+This is an example of a paragraph with a non-regular shape.
+
+\parshape 2 2em 20em 4em 18em
+This is an example of a paragraph with a non-regular shape.
+This is an example of a paragraph with a non-regular shape.
+This is an example of a paragraph with a non-regular shape.
+This is an example of a paragraph with a non-regular shape.
+This is an example of a paragraph with a non-regular shape.
+This is an example of a paragraph with a non-regular shape.
+This is an example of a paragraph with a non-regular shape.
+This is an example of a paragraph with a non-regular shape.
+\startbuffer[abcd]
+abcdabcdabcdabcdabcd
+\stopbuffer
+\basefootnote[abcd][337]
+
+
+This is an example of a paragraph with a non-regular shape.
+\basefootnote[abcd][338]
+
+
+
+\stoptext
