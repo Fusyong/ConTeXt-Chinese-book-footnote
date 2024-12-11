@@ -126,7 +126,7 @@
 \def\basefootnote[#1][#2]{%
     \incrementuniquename%
     \ctxlua{userdata.basefootnote('#1', '#2', '\uniquename')}%
-    \setdataset[footnotetable][buf={#1},page={#2},uniquename={\uniquename}]
+    % \setdataset[footnotetable][buf={#1},page={#2},uniquename={\uniquename}]
     }
 \ReadFile{footnote.lua}
 

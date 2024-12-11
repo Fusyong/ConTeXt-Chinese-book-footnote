@@ -23,11 +23,11 @@ This is an example of a paragraph with a non-regular shape.
 \startbuffer[abcd]
 This is the abcd footnote,9999
 \stopbuffer
-\basefootnote[abcd][337]
+\basefootnote[abcd][111]
 
 
 This is an example of a paragraph with a non-regular shape.
-\basefootnote[abcd][333]
+\basefootnote[abcd][222]
 
 
 

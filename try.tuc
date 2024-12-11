@@ -55,21 +55,11 @@ if not utilitydata.job.datasets then utilitydata.job.datasets = { } end
 
 utilitydata.job.datasets.collected={
  ["footnotetable"]={
-  {
-   ["buf"]="abcd",
-   ["index"]=1,
-   ["order"]=1,
-   ["page"]="337",
-   ["realpage"]=1,
-   ["uniquename"]="uniquenameB",
+  ["uniquenameA"]={
+   ["uniquename"]=99999,
   },
-  {
-   ["buf"]="abcd",
-   ["index"]=2,
-   ["order"]=2,
-   ["page"]="333",
-   ["realpage"]=1,
-   ["uniquename"]="uniquenameC",
+  ["uniquenameB"]={
+   ["uniquename"]=99999,
   },
  },
 }
@@ -112,7 +102,7 @@ utilitydata.structures.counters.collected={
   { 0 },
  },
  ["footnote"]={
-  { 2 },
+  { 0 },
  },
  ["formula"]={
   { 0 },
@@ -154,7 +144,7 @@ utilitydata.structures.counters.collected={
   { 0 },
  },
  ["uniquecounter"]={
-  { 3 },
+  { 2 },
  },
  ["userpage"]={
   { 2 },
@@ -165,37 +155,6 @@ if not utilitydata.structures then utilitydata.structures = { } end
 if not utilitydata.structures.lists then utilitydata.structures.lists = { } end
 
 utilitydata.structures.lists.collected={
- {
-  ["metadata"]=1,
-  ["numberdata"]=3,
-  ["prefixdata"]=4,
-  ["references"]={
-   ["internal"]=1,
-   ["order"]=1,
-   ["realpage"]=1,
-   ["reference"]="uniquenameC",
-   ["section"]=0,
-   ["used"]="fit",
-  },
-  ["titledata"]={
-   ["title"]="\\getbuffer [abcd]\\unskip :333.",
-  },
- },
- {
-  ["metadata"]=1,
-  ["numberdata"]=6,
-  ["prefixdata"]=4,
-  ["references"]={
-   ["internal"]=3,
-   ["order"]=2,
-   ["realpage"]=1,
-   ["section"]=0,
-   ["used"]="fit",
-  },
-  ["titledata"]={
-   ["title"]="同[\\in {}{}[uniquenameB]]333.",
-  },
- },
 }
 
 if not utilitydata.structures then utilitydata.structures = { } end
@@ -206,16 +165,16 @@ utilitydata.structures.pages.collected={
   ["block"]="bodypart",
   ["label"]=false,
   ["number"]=1,
-  ["numberdata"]=7,
-  ["prefixdata"]=8,
+  ["numberdata"]=1,
+  ["prefixdata"]=2,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["label"]=false,
   ["number"]=2,
-  ["numberdata"]=7,
-  ["prefixdata"]=8,
+  ["numberdata"]=1,
+  ["prefixdata"]=2,
   ["state"]="start",
  },
 }
@@ -224,39 +183,12 @@ if not utilitydata.structures then utilitydata.structures = { } end
 if not utilitydata.structures.references then utilitydata.structures.references = { } end
 
 utilitydata.structures.references.collected={
- [""]={
-  ["*1"]={
-   ["metadata"]=9,
-   ["references"]={
-    ["block"]="bodypart",
-    ["internal"]=2,
-    ["realpage"]=1,
-    ["reference"]="*1",
-    ["section"]=0,
-    ["used"]="fit",
-    ["view"]="fit",
-   },
-  },
-  ["*3"]={
-   ["metadata"]=9,
-   ["references"]={
-    ["block"]="bodypart",
-    ["internal"]=4,
-    ["realpage"]=1,
-    ["reference"]="*3",
-    ["section"]=0,
-    ["used"]="fit",
-    ["view"]="fit",
-   },
-  },
- },
 }
 
 if not utilitydata.structures then utilitydata.structures = { } end
 if not utilitydata.structures.references then utilitydata.structures.references = { } end
 
 utilitydata.structures.references.referred={
- { 1, 1 },
 }
 
 if not utilitydata.job then utilitydata.job = { } end
@@ -333,36 +265,12 @@ utilitydata.job.embedded.collected={
 utilitydata.job.packed={
  ["index"]={
   {
-   ["catcodes"]=9,
-   ["kind"]="construction",
-   ["level"]=0,
-   ["name"]="footnote",
-  },
-  { 1 },
-  {
-   ["conversionset"]="number",
-   ["numbers"]=2,
-  },
-  {
-   ["connector"]=".",
-   ["prefix"]="no",
-   ["segments"]="2:2",
-  },
-  { 2 },
-  {
-   ["conversionset"]="number",
-   ["numbers"]=5,
-  },
-  {
    ["conversionset"]="pagenumber",
   },
   {
    ["connector"]="–",
    ["prefix"]="no",
    ["set"]="part",
-  },
-  {
-   ["kind"]="page",
   },
  },
  ["keys"]={
