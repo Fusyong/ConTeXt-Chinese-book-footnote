@@ -14,9 +14,12 @@ function userdata.basefootnote(buf, page, uniquename)
     --context("\\setdataset[footnotetable][%s][buf={%s},page={%s}]",uniquename,buf_option,page_option)
     setdata {
         name  = "footnotetable",
-        tag   = uniquename,
+        -- tag   = "here",
         data  = {
-            ["uniquename"]=99999,
+            ["uniquename"]=1111,
+            ["realpage"]= "\realpage",
+            ["buf"]= buf_option,
+            ["page"]= page_option,
         }
     }
 

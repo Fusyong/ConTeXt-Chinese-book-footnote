@@ -55,11 +55,31 @@ if not utilitydata.job.datasets then utilitydata.job.datasets = { } end
 
 utilitydata.job.datasets.collected={
  ["footnotetable"]={
+  {
+   ["buf"]="abcd",
+   ["page"]="111",
+   ["realpage"]="1",
+   ["uniquename"]=1111,
+  },
+  {
+   ["buf"]="abcd",
+   ["page"]="222",
+   ["realpage"]="1",
+   ["uniquename"]=1111,
+  },
   ["uniquenameA"]={
-   ["uniquename"]=99999,
+   ["buf"]="abcd",
+   ["index"]=2,
+   ["order"]=2,
+   ["page"]="111",
+   ["realpage"]=1,
   },
   ["uniquenameB"]={
-   ["uniquename"]=99999,
+   ["buf"]="abcd",
+   ["index"]=4,
+   ["order"]=4,
+   ["page"]="222",
+   ["realpage"]=1,
   },
  },
 }
@@ -102,7 +122,7 @@ utilitydata.structures.counters.collected={
   { 0 },
  },
  ["footnote"]={
-  { 0 },
+  { 4 },
  },
  ["formula"]={
   { 0 },
@@ -155,6 +175,70 @@ if not utilitydata.structures then utilitydata.structures = { } end
 if not utilitydata.structures.lists then utilitydata.structures.lists = { } end
 
 utilitydata.structures.lists.collected={
+ {
+  ["metadata"]=1,
+  ["numberdata"]=3,
+  ["prefixdata"]=4,
+  ["references"]={
+   ["internal"]=1,
+   ["order"]=1,
+   ["realpage"]=1,
+   ["reference"]="uniquenameA",
+   ["section"]=0,
+   ["used"]="fit",
+  },
+  ["titledata"]={
+   ["title"]="\\getbuffer [abcd]\\unskip :111.",
+  },
+ },
+ {
+  ["metadata"]=1,
+  ["numberdata"]=6,
+  ["prefixdata"]=4,
+  ["references"]={
+   ["internal"]=3,
+   ["order"]=2,
+   ["realpage"]=1,
+   ["reference"]="uniquenameA",
+   ["section"]=0,
+   ["used"]="fit",
+  },
+  ["titledata"]={
+   ["title"]="\\getbuffer [abcd]\\unskip :111.",
+  },
+ },
+ {
+  ["metadata"]=1,
+  ["numberdata"]=8,
+  ["prefixdata"]=4,
+  ["references"]={
+   ["internal"]=5,
+   ["order"]=3,
+   ["realpage"]=1,
+   ["reference"]="uniquenameB",
+   ["section"]=0,
+   ["used"]="fit",
+  },
+  ["titledata"]={
+   ["title"]="\\getbuffer [abcd]\\unskip :222.",
+  },
+ },
+ {
+  ["metadata"]=1,
+  ["numberdata"]=10,
+  ["prefixdata"]=4,
+  ["references"]={
+   ["internal"]=7,
+   ["order"]=4,
+   ["realpage"]=1,
+   ["reference"]="uniquenameB",
+   ["section"]=0,
+   ["used"]="fit",
+  },
+  ["titledata"]={
+   ["title"]="\\getbuffer [abcd]\\unskip :222.",
+  },
+ },
 }
 
 if not utilitydata.structures then utilitydata.structures = { } end
@@ -165,16 +249,16 @@ utilitydata.structures.pages.collected={
   ["block"]="bodypart",
   ["label"]=false,
   ["number"]=1,
-  ["numberdata"]=1,
-  ["prefixdata"]=2,
+  ["numberdata"]=11,
+  ["prefixdata"]=12,
   ["state"]="start",
  },
  {
   ["block"]="bodypart",
   ["label"]=false,
   ["number"]=2,
-  ["numberdata"]=1,
-  ["prefixdata"]=2,
+  ["numberdata"]=11,
+  ["prefixdata"]=12,
   ["state"]="start",
  },
 }
@@ -183,12 +267,63 @@ if not utilitydata.structures then utilitydata.structures = { } end
 if not utilitydata.structures.references then utilitydata.structures.references = { } end
 
 utilitydata.structures.references.collected={
+ [""]={
+  ["*1"]={
+   ["metadata"]=13,
+   ["references"]={
+    ["block"]="bodypart",
+    ["internal"]=2,
+    ["realpage"]=1,
+    ["reference"]="*1",
+    ["section"]=0,
+    ["used"]="fit",
+    ["view"]="fit",
+   },
+  },
+  ["*3"]={
+   ["metadata"]=13,
+   ["references"]={
+    ["block"]="bodypart",
+    ["internal"]=4,
+    ["realpage"]=1,
+    ["reference"]="*3",
+    ["section"]=0,
+    ["used"]="fit",
+    ["view"]="fit",
+   },
+  },
+  ["*5"]={
+   ["metadata"]=13,
+   ["references"]={
+    ["block"]="bodypart",
+    ["internal"]=6,
+    ["realpage"]=1,
+    ["reference"]="*5",
+    ["section"]=0,
+    ["used"]="fit",
+    ["view"]="fit",
+   },
+  },
+  ["*7"]={
+   ["metadata"]=13,
+   ["references"]={
+    ["block"]="bodypart",
+    ["internal"]=8,
+    ["realpage"]=1,
+    ["reference"]="*7",
+    ["section"]=0,
+    ["used"]="fit",
+    ["view"]="fit",
+   },
+  },
+ },
 }
 
 if not utilitydata.structures then utilitydata.structures = { } end
 if not utilitydata.structures.references then utilitydata.structures.references = { } end
 
 utilitydata.structures.references.referred={
+ { 1, 1 },
 }
 
 if not utilitydata.job then utilitydata.job = { } end
@@ -265,12 +400,46 @@ utilitydata.job.embedded.collected={
 utilitydata.job.packed={
  ["index"]={
   {
+   ["catcodes"]=9,
+   ["kind"]="construction",
+   ["level"]=0,
+   ["name"]="footnote",
+  },
+  { 1 },
+  {
+   ["conversionset"]="number",
+   ["numbers"]=2,
+  },
+  {
+   ["connector"]=".",
+   ["prefix"]="no",
+   ["segments"]="2:2",
+  },
+  { 2 },
+  {
+   ["conversionset"]="number",
+   ["numbers"]=5,
+  },
+  { 3 },
+  {
+   ["conversionset"]="number",
+   ["numbers"]=7,
+  },
+  { 4 },
+  {
+   ["conversionset"]="number",
+   ["numbers"]=9,
+  },
+  {
    ["conversionset"]="pagenumber",
   },
   {
    ["connector"]="–",
    ["prefix"]="no",
    ["set"]="part",
+  },
+  {
+   ["kind"]="page",
   },
  },
  ["keys"]={
